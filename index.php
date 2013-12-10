@@ -34,14 +34,14 @@ get_header(); ?>
             <?php
                 foreach ($parent_categories as $category) { ?>
                     <div class="span3">
-                    <div class="about well">
-                    <a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name; ?></a>
-                    <div class="entry-content">
-                    <h2><?php echo $category->name; ?></h2>
-                    <p><?php echo $category->description; ?></p>
-                    </div>
-                    <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn"><?php echo $category->description;?></a>
-                    </div>
+                        <div class="about well">
+                            <a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name; ?></a>
+                            <div class="entry-content">
+                                <h2><?php echo $category->name; ?></h2>
+                                <p><?php echo $category->description; ?></p>
+                            </div>
+                            <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn"><?php echo $category->description;?></a>
+                        </div>
                     </div>
             <?php } ?>
 
