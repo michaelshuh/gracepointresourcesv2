@@ -16,22 +16,44 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+		<?php if ( is_front_page() ) : ?>
 
 			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php /*while ( have_posts() ) : the_post(); */ ?>
+            <?php 
+                $parent_categories = array();
+                foreach(get_categories('hide_empty=0') as $category) {
+                    if ( $category->parent > 0) {
+                        continue;
+                    } else {
+                        array_push( $parent_categories, $category );
+                    }
+                }
+            ?>
+
+            <?php
+                foreach ($parent_categories as $category) { ?>
+                    <div class="span3">
+                    <div class="about well">
+                    <a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name; ?></a>
+                    <div class="entry-content">
+                    <h2><?php echo $category->name; ?></h2>
+                    <p><?php echo $category->description; ?></p>
+                    </div>
+                    <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn"><?php echo $category->description;?></a>
+                    </div>
+                    </div>
+            <?php } ?>
 
 				<?php
 					/* Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
+					//get_template_part( 'content', get_post_format() );
 				?>
 
-			<?php endwhile; ?>
-
-			<?php gracepointresources_paging_nav(); ?>
+			<?php // endwhile; ?>
 
 		<?php else : ?>
 
@@ -42,5 +64,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 <?php get_footer(); ?>
