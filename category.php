@@ -19,13 +19,15 @@ get_header(); ?>
     <?php
         $current_categoryID = $cat;
         $current_category = get_category($current_categoryID);
-        if ($current_category->parent == 0):
+    ?>
+    <?php if ($current_category->parent == 0): ?>
+    <?php
             $child_categories = array();
             foreach (get_categories("hide_empty=0&parent=$current_categoryID") as $child_category) {
                 array_push($child_categories, $child_category);
             }
             foreach ($child_categories as $category) { 
-        ?>
+    ?>
                 <div class="span3">
                     <div class="about well">
                         <div class="entry-content">
@@ -36,7 +38,7 @@ get_header(); ?>
                     </div>  
                 </div>
         <?php } ?>
-        <?php else : {?>
+    <?php else : //else lower category?>
         <!-- this is a lower category -->
             <?php while ( have_posts() ) : the_post(); ?>
 
