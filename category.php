@@ -19,7 +19,7 @@ get_header(); ?>
     <?php
         $current_categoryID = $cat;
         $current_category = get_category($current_categoryID);
-        if ($current_category->parent == 0) {
+        if ($current_category->parent == 0):
             $child_categories = array();
             foreach (get_categories("hide_empty=0&parent=$current_categoryID") as $child_category) {
                 array_push($child_categories, $child_category);
@@ -36,21 +36,21 @@ get_header(); ?>
                     </div>  
                 </div>
         <?php } ?>
-    <?php } else {?>
+        <?php else : {?>
         <!-- this is a lower category -->
-        <?php while ( have_posts() ) : the_post(); ?>
+            <?php while ( have_posts() ) : the_post(); ?>
 
-            <?php get_template_part( 'content', get_post_format()); ?>
+                <?php get_template_part( 'content', get_post_format()); ?>
 
-            <?php
-            // If comments are open or we have at least one comment, load up the comment template
-            if ( comments_open() || '0' != get_comments_number() ) :
-                comments_template();
-            endif;
-            ?>
+                <?php
+                // If comments are open or we have at least one comment, load up the comment template
+                if ( comments_open() || '0' != get_comments_number() ) :
+                    comments_template();
+                endif;
+                ?>
 
-        <?php endwhile; // end of the loop. ?>
-    <?php } ?>
+            <?php endwhile; // end of the loop. ?>
+        <?php endif;  ?>
     <?php endif; ?>
 
     </main><!-- #main -->
