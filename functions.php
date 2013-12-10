@@ -76,6 +76,9 @@ add_action( 'widgets_init', 'gracepointresources_widgets_init' );
  * Enqueue scripts and styles.
  */
 function gracepointresources_scripts() {
+    wp_enqueue_style('gracepointresources-bootstrap',get_template_directory_uri().'/bootstrap/css/bootstrap.css');
+    wp_enqueue_style('gracepointresources-bootstrap-responsive',get_template_directory_uri().'/bootstrap/css/bootstrap-responsive.css');
+    wp_enqueue_script('gracepointresources-bootstrap',get_template_directory_uri().'/bootstrap/js/bootstrap.min.js',array('jquery'));
 	wp_enqueue_style( 'gracepointresources-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'gracepointresources-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
