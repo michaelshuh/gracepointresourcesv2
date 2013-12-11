@@ -14,7 +14,7 @@ get_header(); ?>
 
 
 <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main container" role="main">
     <?php if(is_category()): ?>
     <?php
         $current_categoryID = $cat;
@@ -27,19 +27,22 @@ get_header(); ?>
                 array_push($child_categories, $child_category);
             }
     ?>
-        <form class="form-inline" method="get" id="searchform" action="<?php get_category_link($current_categoryID); ?>/">
-            <select id="search-context" name="search-context">
-                <option value="<?php get_category_link($current_categoryID); ?>"><?php echo $current_category->name; ?></option>
-                <?php
-                foreach ($child_categories as $category) { ?>
-                    <option value="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->name; ?></option>
-                <?php } ?>
-            </select>
+        <div class="row">
+            <form class="form-inline" method="get" id="searchform" action="<?php get_category_link($current_categoryID); ?>/">
+                <select id="search-context" name="search-context" class="span2">
+                    <option value="<?php get_category_link($current_categoryID); ?>"><?php echo $current_category->name; ?></option>
+                    <?php
+                    foreach ($child_categories as $category) { ?>
+                        <option value="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->name; ?></option>
+                    <?php } ?>
+                </select>
 
 
-            <input type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" class="span8" />
-            <input type="submit" id="searchsubmit" value="Search" class="btn" />
-        </form>
+                <input type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" class="span8" />
+                <input type="submit" id="searchsubmit" value="Search" class="btn" />
+            </form>
+        </div>
+        <!-- Script for search -->
         <script type="text/javascript">
             jQuery("#search-context").change(function(changeEvent) {
                 var dropdownURL = jQuery("#search-context").val();
@@ -53,6 +56,8 @@ get_header(); ?>
                         <div class="entry-content">
                             <h2><?php echo $category->name; ?></h2>
                             <p><?php echo $category->description; ?></p>
+                            <!-- Category Image -->
+                            <img src="<?php category_image_src(array("term_id" => $category->cat_ID),true); ?>" />
                         </div>
                         <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn">Link</a>
                     </div>  
