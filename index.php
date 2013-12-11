@@ -12,25 +12,45 @@
  */
 
 get_header(); ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+        <?php 
+            $parent_categories = array();
+            foreach(get_categories('hide_empty=0') as $category) {
+                if ( $category->parent > 0) {
+                    continue;
+                } else {
+                    array_push( $parent_categories, $category );
+                }
+            }
+        ?>
+
+
+        <form class="form-inline" method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+            <select id="search-context" name="search-context">
+                <option value="<?php bloginfo('home'); ?>">All</option>
+                <?php
+                foreach ($parent_categories as $category) { ?>
+                    <option value="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->name; ?></option>
+                <?php } ?>
+            </select>
+
+
+            <input type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" class="span8" />
+            <input type="submit" id="searchsubmit" value="Search" class="btn" />
+        </form>
+        <script type="text/javascript">
+            jQuery("#search-context").change(function(changeEvent) {
+                var dropdownURL = jQuery("#search-context").val();
+                jQuery("#searchform").attr("action", dropdownURL)
+            });
+        </script>
+
 
 		<?php if ( is_front_page() ) : ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php /*while ( have_posts() ) : the_post(); */ ?>
-            <?php 
-                $parent_categories = array();
-                foreach(get_categories('hide_empty=0') as $category) {
-                    if ( $category->parent > 0) {
-                        continue;
-                    } else {
-                        array_push( $parent_categories, $category );
-                    }
-                }
-            ?>
-
             <?php
                 foreach ($parent_categories as $category) { ?>
                     <div class="span3">

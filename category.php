@@ -26,8 +26,28 @@ get_header(); ?>
             foreach (get_categories("hide_empty=0&parent=$current_categoryID") as $child_category) {
                 array_push($child_categories, $child_category);
             }
-            foreach ($child_categories as $category) { 
     ?>
+        <form class="form-inline" method="get" id="searchform" action="<?php get_category_link($current_categoryID); ?>/">
+            <select id="search-context" name="search-context">
+                <option value="<?php get_category_link($current_categoryID); ?>"><?php echo $current_category->name; ?></option>
+                <?php
+                foreach ($child_categories as $category) { ?>
+                    <option value="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->name; ?></option>
+                <?php } ?>
+            </select>
+
+
+            <input type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" class="span8" />
+            <input type="submit" id="searchsubmit" value="Search" class="btn" />
+        </form>
+        <script type="text/javascript">
+            jQuery("#search-context").change(function(changeEvent) {
+                var dropdownURL = jQuery("#search-context").val();
+                jQuery("#searchform").attr("action", dropdownURL)
+            });
+        </script>
+
+        <?php foreach ($child_categories as $category) { ?>
                 <div class="span3">
                     <div class="about well">
                         <div class="entry-content">
