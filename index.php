@@ -13,7 +13,7 @@
 
 get_header(); ?>
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main container" role="main">
         <?php 
             $parent_categories = array();
             foreach(get_categories('hide_empty=0') as $category) {
@@ -25,20 +25,21 @@ get_header(); ?>
             }
         ?>
 
+        <div class="row">
+            <form class="form-inline" method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+                <select class="span2" id="search-context" name="search-context">
+                    <option value="<?php bloginfo('home'); ?>">All</option>
+                    <?php
+                    foreach ($parent_categories as $category) { ?>
+                        <option value="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->name; ?></option>
+                    <?php } ?>
+                </select>
 
-        <form class="form-inline" method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-            <select id="search-context" name="search-context">
-                <option value="<?php bloginfo('home'); ?>">All</option>
-                <?php
-                foreach ($parent_categories as $category) { ?>
-                    <option value="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->name; ?></option>
-                <?php } ?>
-            </select>
 
-
-            <input type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" class="span8" />
-            <input type="submit" id="searchsubmit" value="Search" class="btn" />
-        </form>
+                <input type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" class="span8" />
+                <input type="submit" id="searchsubmit" value="Search" class="btn" />
+            </form>
+        </div>
         <script type="text/javascript">
             jQuery("#search-context").change(function(changeEvent) {
                 var dropdownURL = jQuery("#search-context").val();
@@ -53,7 +54,7 @@ get_header(); ?>
 			<?php /*while ( have_posts() ) : the_post(); */ ?>
             <?php
                 foreach ($parent_categories as $category) { ?>
-                    <div class="span3">
+                    <div class="span2">
                         <div class="about well">
                             <a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name; ?></a>
                             <div class="entry-content">
