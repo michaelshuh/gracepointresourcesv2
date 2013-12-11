@@ -60,6 +60,8 @@ get_header(); ?>
                             <div class="entry-content">
                                 <h2><?php echo $category->name; ?></h2>
                                 <p><?php echo $category->description; ?></p>
+                                <!-- Category Image -->
+                                <img src="<?php category_image_src(array("term_id" => $category->cat_ID),true); ?>" />
                             </div>
                             <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn"><?php echo $category->description;?></a>
                         </div>
