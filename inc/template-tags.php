@@ -175,6 +175,21 @@ function gracepointresources_categorized_blog() {
 	}
 }
 
+function gracepointresources_category_rss_link($category) {
+?>
+    <div class="row center">
+<?php
+    printf( __( '%1$s', 'gracepointresources' ),
+        sprintf( '<a href="%1$s/feed" rel="bookmark" class="btn">Subscribe (RSS) to %2$s</a>',
+            esc_url( get_category_link($category->cat_ID) ),
+            $category->name
+        )
+    );
+?>
+    </div>
+<?php
+}
+
 /**
  * Flush out the transients used in gracepointresources_categorized_blog.
  */

@@ -30,6 +30,8 @@ get_header(); ?>
 
         <?php gracepointresources_create_search_bar($current_categoryID) ?>
 
+        <?php gracepointresources_category_rss_link($current_category) ?>
+
         <?php foreach ($child_categories as $category) { ?>
                 <div class="span3">
                     <div class="about well">
@@ -45,6 +47,7 @@ get_header(); ?>
         <?php } ?>
     <?php else : //else lower category?>
         <!-- this is a lower category -->
+            <div class="span7 pull-left">
             <?php while ( have_posts() ) : the_post(); ?>
 
                 <?php get_template_part( 'content', get_post_format()); ?>
@@ -57,12 +60,14 @@ get_header(); ?>
                 ?>
 
             <?php endwhile; // end of the loop. ?>
+            </div>
+            <div class="pull-left span4">
+                <?php dynamic_sidebar( 'category-sidebar' ); ?> 
+            </div>
         <?php endif;  ?>
     <?php endif; ?>
 
     </main><!-- #main -->
 </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
-<a href="<?php echo get_category_link($current_categoryID); ?>feed/" class="btn">Subscribe (RSS) to <?php echo $current_category->name; ?></a>
 <?php get_footer(); ?>
