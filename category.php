@@ -50,6 +50,8 @@ get_header(); ?>
             });
         </script>
 
+        <?php gracepointresources_category_rss_link($current_category) ?>
+
         <?php foreach ($child_categories as $category) { ?>
                 <div class="span3">
                     <div class="about well">
@@ -88,5 +90,4 @@ get_header(); ?>
     </main><!-- #main -->
 </div><!-- #primary -->
 
-<a href="<?php echo get_category_link($current_categoryID); ?>feed/" class="btn">Subscribe (RSS) to <?php echo $current_category->name; ?></a>
 <?php get_footer(); ?>
