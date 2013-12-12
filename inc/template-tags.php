@@ -52,14 +52,9 @@ function gracepointresources_post_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'gracepointresources' ); ?></h1>
-		<div class="nav-links">
-
-			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'gracepointresources' ) ); ?>
-			<?php next_post_link(     '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'gracepointresources' ) ); ?>
-
-		</div><!-- .nav-links -->
+	<nav id="nav-single" class="navigation post-navigation" role="navigation">
+        <?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> Previous Post', 'Previous post link', 'gracepointresources' ) ); ?>
+        <?php next_post_link(     '%link', _x( 'Next Post <span class="meta-nav">&rarr;</span>', 'Next post link',     'gracepointresources' ) ); ?>
 	</nav><!-- .navigation -->
 	<?php
 }
@@ -142,7 +137,7 @@ function gracepointresources_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'gracepointresources' ),
+	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> / Posted by %2$s</span>', 'gracepointresources' ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
 			$time_string

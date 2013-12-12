@@ -561,7 +561,7 @@ object {
 ----------------------------------------------- */
 
 .site-main [class*="navigation"] {
-	margin: 0 0 1.5em;
+	/*margin: 0 0 1.5em;*/
 	overflow: hidden;
 }
 [class*="navigation"] .nav-previous {
@@ -615,4 +615,20 @@ object {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+
+
+
+/* Custom Styling
+---------------------------------------------- */
+
+.entry-meta {
+    margin-bottom: 10px;
+    font-size: 9pt;
+}
+
+.navigation {
+    float: right;
+    margin-top: -5px;
+    margin-right: -10px;
 }
