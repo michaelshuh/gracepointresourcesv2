@@ -24,31 +24,8 @@ get_header(); ?>
                 }
             }
         ?>
-
-        <div class="row">
-            <div class="span3 search-font"> What </div>
-            <div class="span3 offset5 search-font"> Category </div>
-        </div>
-        <input class="search-bar" name="searchbar-name" id="seach-bar-id"/>
-
-
-        <select class=" search-dropdown" id="search-context" name="search-context">
-            <option value="<?php bloginfo('home'); ?>">All</option>
-            <?php
-            foreach ($parent_categories as $category) { ?>
-                <option value="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->name; ?></option>
-            <?php } ?>
-        </select>
-
-        <input class="search-button" type="submit" id="searchsubmit" value="Search"/>
-
-        <script type="text/javascript">
-            jQuery("#search-context").change(function(changeEvent) {
-                var dropdownURL = jQuery("#search-context").val();
-                jQuery("#searchform").attr("action", dropdownURL)
-            });
-        </script>
-
+    
+    <?php gracepointresources_create_search_bar() ?>
 
 		<?php if ( is_front_page() ) : ?>
 

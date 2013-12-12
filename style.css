@@ -651,21 +651,24 @@ h1 {
     font-size: 12pt;
 }
 
+.search-field {
+	padding: 20px;
+}
 
-.search-dropdown {
+#cat {
 	width: 20%;
 	height: 40px;
 }
 
 
 .search-bar {
-	width: 67%;
+	width: 70%;
 	height: 34px;
 }
 
 .search-button {
-	width: 15%;
-	height: 42px;
+	height: 41px;
+	position: relative;
 	background: #69f;
 }
 
