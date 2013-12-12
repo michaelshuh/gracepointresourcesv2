@@ -27,28 +27,8 @@ get_header(); ?>
                 array_push($child_categories, $child_category);
             }
     ?>
-        <div class="row">
-            <form class="form-inline" method="get" id="searchform" action="<?php get_category_link($current_categoryID); ?>/">
-                <select id="search-context" name="search-context" class="span2">
-                    <option value="<?php get_category_link($current_categoryID); ?>"><?php echo $current_category->name; ?></option>
-                    <?php
-                    foreach ($child_categories as $category) { ?>
-                        <option value="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->name; ?></option>
-                    <?php } ?>
-                </select>
 
-
-                <input type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" class="span8" />
-                <input type="submit" id="searchsubmit" value="Search" class="btn" />
-            </form>
-        </div>
-        <!-- Script for search -->
-        <script type="text/javascript">
-            jQuery("#search-context").change(function(changeEvent) {
-                var dropdownURL = jQuery("#search-context").val();
-                jQuery("#searchform").attr("action", dropdownURL)
-            });
-        </script>
+        <?php gracepointresources_create_search_bar() ?>
 
         <?php foreach ($child_categories as $category) { ?>
                 <div class="span3">
