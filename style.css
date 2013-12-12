@@ -44,6 +44,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	vertical-align: baseline;
 }
+
+
 html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
@@ -621,7 +623,6 @@ object {
 }
 
 
-
 /* Custom Styling
 ---------------------------------------------- */
 
@@ -648,4 +649,39 @@ h1 {
 
 .entry-content, .entry-content p {
     font-size: 12pt;
+}
+
+
+.search-dropdown {
+	width: 20%;
+	height: 40px;
+}
+
+
+.search-bar {
+	width: 67%;
+	height: 34px;
+}
+
+.search-button {
+	width: 15%;
+	height: 42px;
+	background: #69f;
+}
+
+.search-font {
+	font-size: 14pt;
+	color: #f60;
+}
+
+#site-title {
+	font-size: 40pt;
+	padding: 40px;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	width: 530px;
+	display: block;
 }

@@ -26,20 +26,22 @@ get_header(); ?>
         ?>
 
         <div class="row">
-            <form class="form-inline" method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-                <select class="span2" id="search-context" name="search-context">
-                    <option value="<?php bloginfo('home'); ?>">All</option>
-                    <?php
-                    foreach ($parent_categories as $category) { ?>
-                        <option value="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->name; ?></option>
-                    <?php } ?>
-                </select>
-
-
-                <input type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" class="span8" />
-                <input type="submit" id="searchsubmit" value="Search" class="btn" />
-            </form>
+            <div class="span3 search-font"> What </div>
+            <div class="span3 offset5 search-font"> Category </div>
         </div>
+        <input class="search-bar" name="searchbar-name" id="seach-bar-id"/>
+
+
+        <select class=" search-dropdown" id="search-context" name="search-context">
+            <option value="<?php bloginfo('home'); ?>">All</option>
+            <?php
+            foreach ($parent_categories as $category) { ?>
+                <option value="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->name; ?></option>
+            <?php } ?>
+        </select>
+
+        <input class="search-button" type="submit" id="searchsubmit" value="Search"/>
+
         <script type="text/javascript">
             jQuery("#search-context").change(function(changeEvent) {
                 var dropdownURL = jQuery("#search-context").val();
