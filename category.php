@@ -84,4 +84,5 @@ get_header(); ?>
 </div><!-- #primary -->
 
 <?php get_sidebar(); ?>
+<a href="<?php echo get_category_link($current_categoryID); ?>feed/" class="btn">Subscribe (RSS) to <?php echo $current_category->name; ?></a>
 <?php get_footer(); ?>
