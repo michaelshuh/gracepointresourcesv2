@@ -28,7 +28,7 @@ get_header(); ?>
             }
     ?>
 
-        <?php gracepointresources_create_search_bar() ?>
+        <?php gracepointresources_create_search_bar($current_categoryID) ?>
 
         <?php foreach ($child_categories as $category) { ?>
                 <div class="span3">

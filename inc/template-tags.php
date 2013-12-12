@@ -187,7 +187,7 @@ function gracepointresources_category_transient_flusher() {
 * Creating search bar template
 */
 
-function gracepointresources_create_search_bar(){ ?>
+function gracepointresources_create_search_bar($category_id){ ?>
 	<div class="search-field">
 		<form class="form-inline" method="get" id="searchform" action="<?php bloginfo('home'); ?>">
 		  <div class="row">
@@ -197,7 +197,11 @@ function gracepointresources_create_search_bar(){ ?>
 
 		  <input class="search-bar" value="<?php the_search_query(); ?>" name="s" id="s" />
 		  <?php
-		      wp_dropdown_categories(array('show_option_all' => 'All'));
+		      wp_dropdown_categories(array('show_option_all' => 'All', 'child_of' => $category_id
+		      	, 'hierarchical' => 1
+		      	, 'depth' => 1
+		      	, 'hide_empty' => 0
+		      	));
 		  ?>
 		  <input class="search-button" type="submit" id="searchsubmit" value="Search"/>
 		</form>
