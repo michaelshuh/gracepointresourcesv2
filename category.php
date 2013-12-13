@@ -47,7 +47,7 @@ get_header(); ?>
         <?php } ?>
     <?php else : //else lower category?>
         <!-- this is a lower category -->
-            <div class="span7 pull-left">
+            <div class="span7 pull-left well">
             <?php while ( have_posts() ) : the_post(); ?>
 
                 <?php get_template_part( 'content', get_post_format()); ?>
@@ -61,7 +61,7 @@ get_header(); ?>
 
             <?php endwhile; // end of the loop. ?>
             </div>
-            <div class="pull-left span4 well">
+            <div class="pull-left span3 well">
                 <?php dynamic_sidebar( 'category-sidebar' ); ?> 
             </div>
         <?php endif;  ?>
