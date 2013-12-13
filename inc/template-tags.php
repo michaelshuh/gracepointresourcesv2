@@ -216,6 +216,7 @@ function gracepointresources_create_search_bar($category_id){ ?>
 		      	, 'hierarchical' => 1
 		      	, 'depth' => 1
 		      	, 'hide_empty' => 0
+		      	, 'show_count' => 1
 		      	));
 		  ?>
 		  <input class="search-button" type="submit" id="searchsubmit" value="Search"/>
