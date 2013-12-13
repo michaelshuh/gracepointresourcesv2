@@ -656,10 +656,28 @@ code{
 }
 */
 
+.about.well{
+    position: relative;
+    padding:0px;
+    border:1px solid #fafafa;
+}
+
+.about.well a {
+    position:absolute;
+    bottom:0;
+}
+
 h1 {
     font-family: 'Open Sans';
     font-weight: 300;
     font-size: 24pt;
+}
+
+h2 {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 20pt;
+    margin: 5px 0px;
 }
 
 .post h1 {
