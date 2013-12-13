@@ -5,7 +5,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-        <div class="entry-meta breadcrumb">
+        <div class="entry-meta breadcrumb well">
             <?php gracepointresources_posted_on(); ?>
             <?php gracepointresources_post_nav(); ?>
         </div><!-- .entry-meta -->

@@ -631,6 +631,14 @@ object {
 /* Custom Styling
 ---------------------------------------------- */
 
+pre,
+code{
+    display: block;
+    float:left;
+    max-width: 100%;
+    white-space: normal !important;
+}
+
 .entry-meta {
     margin-bottom: 10px;
     font-size: 9pt;
@@ -692,4 +700,34 @@ h1 {
 	margin-right: auto;
 	width: 545px;
 	display: block;
+}
+
+/* COMMENT AREA */
+.comment-form-author,.comment-form-email,.comment-form-url{
+    width:33%;
+    float: left;
+    clear: none !important;
+}
+
+.mx_comments .commentmetadata .fn ,
+.mx_comments .commentmetadata .fn a{
+    float: left;
+    margin-right: 10px;
+    font-size: 12pt;
+    color: #2765B5 !important;
+
+}
+#commentform textarea{
+    width: 98%;
+    padding: 5px;
+}
+
+#respond{
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.form-allowed-tags{
+    font-family: 'courier new';
+    color: #aaa;
 }
