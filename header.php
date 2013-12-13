@@ -23,7 +23,7 @@
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<h1 id="site-title" class="center">Gracepoint Resources</h1>
+			<h1 id="site-title" class="center"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		</div>
 <!--
 		<nav id="site-navigation" class="main-navigation" role="navigation">
