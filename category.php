@@ -30,7 +30,6 @@ get_header(); ?>
 
         <?php get_search_form() ?>
 
-        <?php gracepointresources_category_rss_link($current_category) ?>
         <div class="row">
             <?php foreach ($child_categories as $category) { 
                 gracepointresources_category_display($category);    
