@@ -27,11 +27,10 @@ get_header(); ?>
                     <?php endwhile; // end of the loop. ?>
 
                     </div>
-
+                    <div class="pull-left span3 well"><?php get_sidebar(); ?></div>
                 </main><!-- #main -->
             </div>
         </div>
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
