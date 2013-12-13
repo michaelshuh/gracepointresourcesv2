@@ -5,10 +5,24 @@
  * @package gracepointresources
  */
 ?>
-<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label>
-		<span class="screen-reader-text"><?php _ex( 'Search for:', 'label', 'gracepointresources' ); ?></span>
-		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'gracepointresources' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
-	</label>
-	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'gracepointresources' ); ?>">
-</form>
+
+<div class="search-field">
+	<form class="form-inline" method="get" id="searchform" action="<?php bloginfo('home'); ?>">
+	  <div class="row">
+	      <div class="span3 search-font"> What </div>
+	      <div class="span3 offset5 search-font"> Category </div>
+	  </div>
+
+	  <input class="search-bar" value="<?php the_search_query(); ?>" name="s" id="s" />
+	  <?php
+	      wp_dropdown_categories(array('show_option_all' => 'All'
+	      	, 'child_of' => get_query_var('cat')
+	      	, 'hierarchical' => 1
+	      	, 'depth' => 1
+	      	, 'hide_empty' => 0
+	      	, 'show_count' => 1
+	      	));
+	  ?>
+	  <input class="search-button" type="submit" id="searchsubmit" value="Search"/>
+	</form>
+</div>

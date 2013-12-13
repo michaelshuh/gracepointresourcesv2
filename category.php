@@ -28,7 +28,7 @@ get_header(); ?>
             }
     ?>
 
-        <?php gracepointresources_create_search_bar($current_categoryID) ?>
+        <?php get_search_form() ?>
 
         <?php gracepointresources_category_rss_link($current_category) ?>
 

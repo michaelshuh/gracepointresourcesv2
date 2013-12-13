@@ -25,7 +25,7 @@ get_header(); ?>
             }
         ?>
     
-    <?php gracepointresources_create_search_bar() ?>
+        <?php get_search_form() ?>
 
 		<?php if ( is_front_page() ) : ?>
 
