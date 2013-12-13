@@ -61,7 +61,7 @@ get_header(); ?>
 
             <?php endwhile; // end of the loop. ?>
             </div>
-            <div class="pull-left span4">
+            <div class="pull-left span4 well">
                 <?php dynamic_sidebar( 'category-sidebar' ); ?> 
             </div>
         <?php endif;  ?>
