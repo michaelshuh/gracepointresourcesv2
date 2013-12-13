@@ -667,6 +667,15 @@ code{
     bottom:0;
 }
 
+.about .entry-content{
+    padding:0px 10px;
+}
+
+.entry-content,
+.entry-content p{
+    font-size:12pt;
+}
+
 h1 {
     font-family: 'Open Sans';
     font-weight: 300;
