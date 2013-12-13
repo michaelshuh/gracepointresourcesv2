@@ -7,12 +7,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php gracepointresources_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
@@ -21,30 +15,13 @@
 
 	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'gracepointresources' ) );
-				if ( $categories_list && gracepointresources_categorized_blog() ) :
-			?>
-			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'gracepointresources' ), $categories_list ); ?>
-			</span>
-			<?php endif; // End if categories ?>
-
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'gracepointresources' ) );
-				if ( $tags_list ) :
-			?>
-			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'gracepointresources' ), $tags_list ); ?>
-			</span>
-			<?php endif; // End if $tags_list ?>
+            <div class="entry-meta breadcrumb">
+                <?php gracepointresources_posted_on(); ?>
+                <nav id="nav-single" class="navigation post-navigation" role="navigation">
+                    <a class="btn btn-info pull-right btn-more" href="<?php the_permalink();?>">read more <i class="icon icon-chevron-right icon-white"></i></a>
+                </nav>
+            </div><!-- .entry-meta -->
 		<?php endif; // End if 'post' == get_post_type() ?>
-
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'gracepointresources' ), __( '1 Comment', 'gracepointresources' ), __( '% Comments', 'gracepointresources' ) ); ?></span>
-		<?php endif; ?>
 
 		<?php edit_post_link( __( 'Edit', 'gracepointresources' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->

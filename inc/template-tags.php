@@ -138,8 +138,7 @@ function gracepointresources_posted_on() {
 	);
 
 	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> / Posted by %2$s</span>', 'gracepointresources' ),
-		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-			esc_url( get_permalink() ),
+		sprintf( '%1$s',
 			$time_string
 		),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',

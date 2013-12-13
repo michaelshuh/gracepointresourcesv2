@@ -486,7 +486,8 @@ a:active {
 	display: none;
 }
 .single .byline,
-.group-blog .byline {
+.group-blog .byline,
+.entry-meta .byline {
 	display: inline;
 }
 .page-content,
