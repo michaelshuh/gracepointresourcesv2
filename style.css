@@ -610,7 +610,7 @@ object {
 
 .widget-title {
 	color: #ffffff;
-	background-color:#f60;
+	background-color:#f89406;
 }
 
 /* =Infinite Scroll
@@ -690,9 +690,17 @@ h1 {
 	color: #f60;
 }
 
+.site-branding {
+	color: #fff !important;
+	background: #f89406;
+}
+
 #site-title {
 	font-size: 40pt;
 	padding: 40px;
+}
+#site-title a {
+	color: #fff;
 }
 
 .center {
