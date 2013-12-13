@@ -31,11 +31,12 @@ get_header(); ?>
         <?php get_search_form() ?>
 
         <?php gracepointresources_category_rss_link($current_category) ?>
-
-        <?php foreach ($child_categories as $category) { 
-            gracepointresources_category_display($category);    
-        }    
-        ?>
+        <div class="row">
+            <?php foreach ($child_categories as $category) { 
+                gracepointresources_category_display($category);    
+            }    
+            ?>
+        </div>
     <?php else : //else lower category?>
         <!-- this is a lower category -->
             <div class="span7 pull-left well">
