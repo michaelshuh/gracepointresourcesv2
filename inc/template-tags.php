@@ -230,7 +230,6 @@ function gracepointresources_categorized_blog() {
 
 function gracepointresources_category_rss_link($category) {
 ?>
-    <div class="row center">
 <?php
     printf( __( '%1$s', 'gracepointresources' ),
         sprintf( '<a href="%1$s/feed" rel="bookmark" class="btn">Subscribe (RSS) to %2$s</a>',
@@ -239,7 +238,6 @@ function gracepointresources_category_rss_link($category) {
         )
     );
 ?>
-    </div>
 <?php
 }
 

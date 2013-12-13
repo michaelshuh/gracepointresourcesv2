@@ -11,15 +11,19 @@
  */
 
 get_header(); ?>
-
+<?php if(is_category()): ?>
+<?php
+    $current_categoryID = $cat;
+    $current_category = get_category($current_categoryID);
+?>
+<div class="navbar categorybar row">
+    <div class="center"><?php gracepointresources_category_rss_link($current_category) ?></div>
+    <div class="center"><?php echo $current_category->name ?></div>
+</div>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main container" role="main">
-    <?php if(is_category()): ?>
-    <?php
-        $current_categoryID = $cat;
-        $current_category = get_category($current_categoryID);
-    ?>
+    
     <?php if ($current_category->parent == 0): ?>
     <?php
             $child_categories = array();
@@ -37,6 +41,7 @@ get_header(); ?>
             }    
             ?>
         </div>
+
     <?php else : //else lower category?>
         <!-- this is a lower category -->
             <div class="span7 pull-left well">
