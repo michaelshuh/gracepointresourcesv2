@@ -6,7 +6,6 @@
  */
 
 get_header(); ?>
-    <?php echo "I am in single.php!" ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
             <div class="container">
