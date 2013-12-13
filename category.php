@@ -16,10 +16,6 @@ get_header(); ?>
     $current_categoryID = $cat;
     $current_category = get_category($current_categoryID);
 ?>
-<div class="navbar categorybar row">
-    <div class="center"><?php gracepointresources_category_rss_link($current_category) ?></div>
-    <div class="center"><?php echo $current_category->name ?></div>
-</div>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main container" role="main">

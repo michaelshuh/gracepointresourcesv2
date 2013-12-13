@@ -21,17 +21,42 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 id="site-title" class="center"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		</div>
-<!--
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'gracepointresources' ); ?></h1>
-			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'gracepointresources' ); ?></a>
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav>--><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    <div class="navbar-wrapper">
+    <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+        <div class="container" id="topmenu">
+
+            <div class="navbar">
+                <div class="navbar-inner">
+    <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('sitename'); ?></a>
+    <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+                </div><!-- /.navbar-inner -->
+            </div><!-- /.navbar -->
+
+        </div> <!-- /.container -->
+
+    <?php if(is_archive()): ?>
+        <div class="container">
+            <div class="arc-header">
+                <?php 
+                    $category = get_category($cat);
+                    gracepointresources_category_rss_link($category) 
+                ?>
+                
+                <h1 class="entry-title pull-right">
+                    <?php if(is_category()) : ?>
+                    <?php echo single_cat_title( '', false ); ?>
+                    <?php endif; ?>
+                </h1>
+            </div>
+        </div>
+    <?php endif; ?>
+    </div><!-- /.navbar-wrapper -->
 
 	<div id="content" class="site-content">
