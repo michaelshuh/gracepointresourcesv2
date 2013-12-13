@@ -6,20 +6,21 @@
  */
 
 get_header(); ?>
-
 	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main container" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'gracepointresources' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<?php get_search_form() ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
+
+			<?php rewind_posts() ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'search' ); ?>
+				<?php get_template_part( 'content' ); ?>
 
 			<?php endwhile; ?>
 
@@ -34,5 +35,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
