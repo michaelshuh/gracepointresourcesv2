@@ -60,6 +60,37 @@ function gracepointresources_post_nav() {
 }
 endif;
 
+if ( ! function_exists( 'gracepointresources_post_meta' ) ) :
+/**
+ * Display the meta data ribbon for each post.
+ *
+ * @return void
+ */
+function gracepointresources_post_meta() {
+?>
+    <div class="well tags">
+        <?php the_tags('Tags: ',' , '); ?>
+        <div class="clear"></div>
+    </div>
+    <div class="well author-box">
+        <div class="media">
+            <div class="pull-left">
+                <?php echo get_avatar( get_the_author_meta('ID'), 90 ); ?>
+            </div>
+            <div class="media-body">  
+                <span class="txt">
+                    <i class="icon icon-edit"></i> About Author: <?php echo get_the_author_meta('display_name'); ?>
+                </span>
+                <div class="clear"></div>
+                <?php echo get_the_author_meta('description'); ?>
+            </div>
+        </div>
+    </div>
+
+<?php
+}
+endif;
+
 if ( ! function_exists( 'gracepointresources_comment' ) ) :
 /**
  * Template for comments and pingbacks.

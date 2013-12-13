@@ -23,38 +23,7 @@
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-        <?php
-            /* translators: used between list items, there is a space after the comma */
-            $category_list = get_the_category_list( __( ', ', 'gracepointresources' ) );
-
-            /* translators: used between list items, there is a space after the comma */
-            $tag_list = get_the_tag_list( '', __( ', ', 'gracepointresources' ) );
-
-            if ( ! gracepointresources_categorized_blog() ) {
-                // This blog only has 1 category so we just need to worry about tags in the meta text
-                if ( '' != $tag_list ) {
-                    $meta_text = __( 'This entry was tagged %2$s.', 'gracepointresources' );
-                } else {
-                    $meta_text = __( '', 'gracepointresources' );
-                }
-
-            } else {
-                // But this blog has loads of categories so we should probably display them here
-                if ( '' != $tag_list ) {
-                    $meta_text = __( 'This entry was posted in %1$s and tagged %2$s.', 'gracepointresources' );
-                } else {
-                    $meta_text = __( 'This entry was posted in %1$s.', 'gracepointresources' );
-                }
-
-            } // end check for categories on this blog
-
-            printf(
-                $meta_text,
-                $category_list,
-                $tag_list,
-                get_permalink()
-            );
-        ?>
+        <?php gracepointresources_post_meta(); ?>
 
         <?php edit_post_link( __( '[Edit]', 'gracepointresources' ), '<span class="edit-link">', '</span>' ); ?>
     </footer><!-- .entry-meta -->
