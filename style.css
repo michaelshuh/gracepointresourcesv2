@@ -650,6 +650,12 @@ code{
     margin-right: -10px;
 }
 
+/*.home .about.well:hover{
+    padding:0px;
+    background: #f5f5f5;
+}
+*/
+
 h1 {
     font-family: 'Open Sans';
     font-weight: 300;

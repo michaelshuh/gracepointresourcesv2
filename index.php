@@ -31,21 +31,13 @@ get_header(); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php /*while ( have_posts() ) : the_post(); */ ?>
-            <?php
-                foreach ($parent_categories as $category) { ?>
-                    <div class="span2">
-                        <div class="about well">
-                            <a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name; ?></a>
-                            <div class="entry-content">
-                                <h2><?php echo $category->name; ?></h2>
-                                <p><?php echo $category->description; ?></p>
-                                <!-- Category Image -->
-                                <img src="<?php category_image_src(array("term_id" => $category->cat_ID),true); ?>" />
-                            </div>
-                            <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn"><?php echo $category->description;?></a>
-                        </div>
-                    </div>
-            <?php } ?>
+            <div class="row">
+                <?php
+                    foreach ($parent_categories as $category) { 
+                        gracepointresources_category_display($category);
+                    }
+                ?>
+            </div>
 
 				<?php
 					/* Include the Post-Format-specific template for the content.

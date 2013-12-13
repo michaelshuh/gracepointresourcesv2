@@ -91,6 +91,29 @@ function gracepointresources_post_meta() {
 }
 endif;
 
+if ( ! function_exists( 'gracepointresources_category_display' ) ) :
+/**
+ * Display the category well box
+ *
+ * @return void
+ */
+function gracepointresources_category_display($category) {
+?>
+    <div class="span3">
+        <div class="about well">
+            <div class="entry-content">
+                <h2><?php echo $category->name; ?></h2>
+                <p><?php echo $category->description; ?></p>
+                <!-- Category Image -->
+                <img src="<?php category_image_src(array("term_id" => $category->cat_ID),true); ?>" />
+            </div>
+            <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn btn-warning btn-block">View Details</a>
+        </div>
+    </div>
+<?php
+}
+endif;
+
 if ( ! function_exists( 'gracepointresources_comment' ) ) :
 /**
  * Template for comments and pingbacks.

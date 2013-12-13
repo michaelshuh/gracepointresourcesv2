@@ -32,19 +32,10 @@ get_header(); ?>
 
         <?php gracepointresources_category_rss_link($current_category) ?>
 
-        <?php foreach ($child_categories as $category) { ?>
-                <div class="span3">
-                    <div class="about well">
-                        <div class="entry-content">
-                            <h2><?php echo $category->name; ?></h2>
-                            <p><?php echo $category->description; ?></p>
-                            <!-- Category Image -->
-                            <img src="<?php category_image_src(array("term_id" => $category->cat_ID),true); ?>" />
-                        </div>
-                        <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn">Link</a>
-                    </div>  
-                </div>
-        <?php } ?>
+        <?php foreach ($child_categories as $category) { 
+            gracepointresources_category_display($category);    
+        }    
+        ?>
     <?php else : //else lower category?>
         <!-- this is a lower category -->
             <div class="span7 pull-left well">
