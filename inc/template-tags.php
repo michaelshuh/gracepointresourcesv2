@@ -102,12 +102,12 @@ function gracepointresources_category_display($category) {
     <div class="span3">
         <div class="about well">
             <div class="entry-content">
-                <h2><?php echo $category->name; ?></h2>
+                <h2><a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name; ?></a></h2>
                 <p><?php echo $category->description; ?></p>
                 <!-- Category Image -->
                 <img src="<?php category_image_src(array("term_id" => $category->cat_ID),true); ?>" />
             </div>
-            <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn btn-warning btn-block">View Details</a>
+            <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn btn-warning btn-block bottom">View Details</a>
         </div>
     </div>
 <?php
