@@ -232,7 +232,7 @@ function gracepointresources_category_rss_link($category) {
 ?>
 <?php
     printf( __( '%1$s', 'gracepointresources' ),
-        sprintf( '<a href="%1$s/feed" rel="bookmark" class="btn">Subscribe (RSS) to %2$s</a>',
+        sprintf( '<a href="%1$s/feed" rel="bookmark">Subscribe (RSS) to %2$s</a>',
             esc_url( get_category_link($category->cat_ID) ),
             $category->name
         )
