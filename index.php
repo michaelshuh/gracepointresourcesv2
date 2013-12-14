@@ -15,6 +15,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main container" role="main">
         <?php 
+
             $parent_categories = array();
             foreach(get_categories('hide_empty=0') as $category) {
                 if ( $category->parent > 0) {
