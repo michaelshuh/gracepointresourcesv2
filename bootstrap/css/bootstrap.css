@@ -2888,7 +2888,7 @@ input[type="button"].btn-block {
 .btn-info {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #9b59bb;
+  background-color: #000000;
   background-image: -moz-linear-gradient(top, #a466c2, #8d46b0);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a466c2), to(#8d46b0));
   background-image: -webkit-linear-gradient(top, #a466c2, #8d46b0);
@@ -2909,7 +2909,7 @@ input[type="button"].btn-block {
 .btn-info.disabled,
 .btn-info[disabled] {
   color: #ffffff;
-  background-color: #8d46b0;
+  background-color: #3E3D32;
   *background-color: #7e3f9d;
 }
 .btn-info:active,
