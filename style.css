@@ -854,6 +854,11 @@ h2 {
 }
 
 .bottom {
-	position:absolute;
-	bottom:0;
+	position: absolute;
+	bottom: 0;
+}
+
+.citation {
+	font-size: 10pt;
+	float: right;
 }
