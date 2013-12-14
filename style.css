@@ -687,11 +687,6 @@ code{
     border:1px solid #fafafa;
 }
 
-.about.well a {
-    position:absolute;
-    bottom:0;
-}
-
 .about .entry-content{
     padding:0px 10px;
 }
@@ -815,4 +810,9 @@ h2 {
 .form-allowed-tags{
     font-family: 'courier new';
     color: #aaa;
+}
+
+.bottom {
+	position:absolute;
+	bottom:0;
 }
