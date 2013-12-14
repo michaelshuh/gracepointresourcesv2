@@ -38,6 +38,7 @@ get_header(); ?>
         </div>
 
     <?php else : //else lower category?>
+        <?php gracepointresources_custom_search_form($current_category); ?>
         <!-- this is a lower category -->
             <div class="span7 pull-left well">
             <?php while ( have_posts() ) : the_post(); ?>
