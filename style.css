@@ -495,7 +495,8 @@ a:active {
 .entry-summary {
 /*	margin: 1.5em 0 0;*/
 }
-.entry-summary p{
+.entry-summary p,
+.entry-content p {
     word-wrap: break-word;
 }
 .page-links {
