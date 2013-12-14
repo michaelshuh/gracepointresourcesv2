@@ -52,6 +52,7 @@ get_header(); ?>
                 ?>
 
             <?php endwhile; // end of the loop. ?>
+            <?php gracepointresources_paging_nav(); ?>
             </div>
             <div class="pull-left span3 well">
                 <?php dynamic_sidebar( 'category-sidebar' ); ?> 
