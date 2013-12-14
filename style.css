@@ -610,8 +610,46 @@ object {
 
 .widget-title {
 	color: #ffffff;
-	background-color:#f89406;
+	/*background-color:#f89406;*/
 }
+
+.widget li {
+    list-style: none;
+    padding: 3px 0px;
+}
+
+/* =Box Widgets
+-----------------------------------------------*/
+.box.widget{
+         
+}
+
+.box.widget h3{
+    margin:6px 6px 0 6px;     
+    color:#000000;
+    text-shadow:1px 1px 10px #ffffff;
+    font-size: 12pt;
+    font-weight: 400;
+    border-bottom: 1px solid #aaa;
+}
+.box.widget ul,
+.box.widget p{
+    margin-left:4px;
+}
+.box.widget ul li{
+    margin:0px;
+}
+.box.widget li,
+.box.widget p{
+    font-size: 11pt;
+}
+
+.box.widget li {
+    border-bottom: 1px solid #f1f1f1;
+    padding: 5px 0px !important;
+}
+
+  
 
 /* =Infinite Scroll
 ----------------------------------------------- */
