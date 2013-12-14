@@ -19,4 +19,5 @@
                 </ul>
             <?php endif; ?>
         </aside>
+        <?php dynamic_sidebar('post-sidebar');?>
 	</div><!-- #secondary -->
