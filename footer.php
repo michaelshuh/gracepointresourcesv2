@@ -10,13 +10,14 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( 'gracepointresources_credits' ); ?>
-			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'gracepointresources' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'gracepointresources' ), 'gracepointresources', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
+	<footer id="colophon" class="footer" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="site-info">
+                    <?php printf( __( 'Copyright &copy: %1$s', 'gracepointresources' ), get_bloginfo('sitename')); ?>
+                </div><!-- .site-info-->
+            </div><!-- .row-->
+		</div><!-- .container -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
