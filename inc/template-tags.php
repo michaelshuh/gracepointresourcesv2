@@ -70,11 +70,8 @@ function gracepointresources_post_meta() {
 ?>
     <div class="well tags">
     	<?php printLikes(get_the_ID()); ?>
-        <span class="pull-right"><?php the_tags('Tags: ',' , '); ?></span>
-        <div class="clear"></div>
-    </div>
-    <div class="well categories">
-        <?php echo get_the_category_list(','); ?>
+        <span class="pull-right span4 offset1"><?php the_tags('Tags: ',' , '); ?></span>
+        <span class="pull-right span4 offset1">Categories:<?php echo get_the_category_list(','); ?></span>
         <div class="clear"></div>
     </div>
     <div class="well author-box">
