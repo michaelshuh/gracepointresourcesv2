@@ -69,7 +69,8 @@ if ( ! function_exists( 'gracepointresources_post_meta' ) ) :
 function gracepointresources_post_meta() {
 ?>
     <div class="well tags">
-        <?php the_tags('Tags: ',' , '); ?>
+    	<?php printLikes(get_the_ID()); ?>
+        <span class="pull-right"><?php the_tags('Tags: ',' , '); ?></span>
         <div class="clear"></div>
     </div>
     <div class="well categories">
@@ -106,7 +107,10 @@ function gracepointresources_category_display($category) {
     <div class="span3">
         <div class="about well">
             <div class="entry-content">
-                <h2><a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name; ?></a></h2>
+                <h2 style="display: inline-block;"><a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name; ?></a></h2>
+								<a href="rss">
+                	<div class="rss-image"></div>
+                </a>
                 <p><?php echo $category->description; ?></p>
                 <!-- Category Image -->
                 <img src="<?php category_image_src(array("term_id" => $category->cat_ID),true); ?>" />

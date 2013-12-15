@@ -866,3 +866,35 @@ h2 {
 	font-size: 10pt;
 	float: right;
 }
+
+.rss-image{
+    width: 19px;
+    height: 19px;
+    background-image: url('images/rss.png');
+    margin-left: 3px;
+    display: inline-block;
+}
+
+/* Likes */
+.likeThis {
+	color: #fff;
+	background-image: url('http://www.easyicon.net/api/resize_png_new.php?id=1083111&size=24');
+	background-position: 10px center;
+	background-repeat: no-repeat;
+	background-color: #222729;
+}
+.likeThis.done {
+background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRF…QIbvwaAbp0YU5czIZCWkCVZMyxZkJW3Y+jxYzWLMzQIABAETEqU5CMIP7AAAAAElFTkSuQmCC');
+background-color: #42c05e;
+}
+.likeThis {
+-webkit-transition: background-color 200ms ease-in;
+-moz-transition: background-color 200ms ease-in;
+-o-transition: background-color 200ms ease-in;
+transition: background-color 200ms ease-in;
+height: 35px;
+padding: 0 15px;
+border-radius: 5px;
+font-weight: bold;
+cursor: pointer;
+text-decoration: none;

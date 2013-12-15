@@ -13,9 +13,6 @@
 	<footer id="colophon" class="footer" role="contentinfo">
         <div class="container">
             <div class="row">
-                <div class='citation'>
-                    <a href="http://www.glyphicons.com">Glyphicons</a>
-                </div>
                 <div class="site-info">
                     <?php printf( __( 'Copyright &copy: %1$s', 'gracepointresources' ), get_bloginfo('sitename')); ?>
                 </div><!-- .site-info-->
