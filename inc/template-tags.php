@@ -259,9 +259,9 @@ function gracepointresources_custom_search_form($category) {
             <div class="span3 offset5 search-font"> Category </div>
         </div>
         <input class="search-bar" name="s" id="s"/>
-        <select class=" search-dropdown" id="search-context" name="search-context">
+        <select class=" search-dropdown" id="cat" name="cat">
             <option value="<?php bloginfo('home'); ?>">All</option>
-            <option value="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->name; ?>  (<?php echo $category->category_count; ?>)</option>
+            <option value="<?php echo $category->cat_ID ?>"><?php echo $category->name; ?>  (<?php echo $category->category_count; ?>)</option>
         </select>
 
         <input class="search-button" type="submit" id="searchsubmit" value="Search"/>
