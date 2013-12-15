@@ -9,6 +9,7 @@
             <?php gracepointresources_posted_on(); ?>
             <?php gracepointresources_post_nav(); ?>
         </div><!-- .entry-meta -->
+        <?php if(function_exists('pf_show_link')){echo pf_show_link();} ?>
         <h1 class="entry-title"><?php the_title(); ?></h1>
     </header><!-- .entry-header -->
 
