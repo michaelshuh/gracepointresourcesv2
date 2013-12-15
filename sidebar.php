@@ -12,7 +12,7 @@
                 <ul>
                     <?php while( $attachments->get() ) : ?>
                         <li>
-                            <a href="<?php $attachments->url();?>" target="_blank"><?php echo $attachments->image('thumbnail');?><span class="offset1"><?php echo $attachments->field('title')?><span></a>
+                            <a href="<?php echo $attachments->url(); ?>" target="_blank"><?php echo $attachments->image('thumbnail');?><span class="offset1"><?php echo $attachments->field('title')?><span></a>
                         </li>
                     <?php endwhile; ?>
                 </ul>

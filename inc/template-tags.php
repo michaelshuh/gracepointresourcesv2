@@ -45,8 +45,8 @@ if ( ! function_exists( 'gracepointresources_post_nav' ) ) :
  */
 function gracepointresources_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
-	$previous = get_adjacent_post( true, '', true );
-	$next     = get_adjacent_post( true, '', false );
+	$previous = get_adjacent_post( TRUE, '', TRUE );
+	$next     = get_adjacent_post( TRUE, '', FALSE );
 
 	if ( ! $next && ! $previous ) {
 		return;
