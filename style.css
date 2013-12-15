@@ -785,12 +785,6 @@ h2 {
 	height: 40px;
 }
 
-.categorybar {
-	background-color: #3E3D32;
-	min-height: 20px;
-	padding: 19px;
-}
-
 .search-bar {
 	width: 70%;
 	height: 34px;
@@ -829,17 +823,17 @@ h2 {
 
 /* COMMENT AREA */
 .comment-form-author,.comment-form-email,.comment-form-url{
-    width:33%;
-    float: left;
-    clear: none !important;
+  width:33%;
+  float: left;
+  clear: none !important;
 }
 
 .mx_comments .commentmetadata .fn ,
 .mx_comments .commentmetadata .fn a{
-    float: left;
-    margin-right: 10px;
-    font-size: 12pt;
-    color: #2765B5 !important;
+  float: left;
+  margin-right: 10px;
+  font-size: 12pt;
+  color: #2765B5 !important;
 
 }
 #commentform textarea{
@@ -848,13 +842,13 @@ h2 {
 }
 
 #respond{
-    padding-top: 20px;
-    margin-top: 20px;
+  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .form-allowed-tags{
-    font-family: 'courier new';
-    color: #aaa;
+  font-family: 'courier new';
+  color: #aaa;
 }
 
 .bottom {
@@ -868,20 +862,17 @@ h2 {
 }
 
 .rss-image{
-    width: 19px;
-    height: 19px;
-    background-image: url('images/rss.png');
-    margin-left: 3px;
-    display: inline-block;
+  width: 19px;
+  height: 19px;
+  background-image: url('images/rss.png');
+  margin-left: 3px;
+  display: inline-block;
 }
 
 /* Likes */
 .likeThis {
 	color: #fff !important;
-	background-position: 10px center;
-	background-repeat: no-repeat;
 	background-color: #222729;
-	height: 35px;
 	padding: 0 15px;
 	border-radius: 5px;
 	font-weight: bold;
@@ -889,7 +880,7 @@ h2 {
 	text-decoration: none;
 }
 .likeThis.done {
-	background-color: #42c05e;
+	background-color: #42c05e !important;
 }
 .likeThis:hover {
 	background-color: #3E3D32;
