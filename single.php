@@ -26,7 +26,11 @@ get_header(); ?>
                     <?php endwhile; // end of the loop. ?>
 
                     </div>
-                    <div class="pull-left span3 well"><?php get_sidebar(); ?></div>
+                    <div class="pull-left span3 well">
+                        <?php dynamic_sidebar( 'category-sidebar' ); ?>
+                        <div class="clear"></div>
+                        <?php get_sidebar(); ?>
+                    </div>
                 </main><!-- #main -->
             </div>
         </div>
