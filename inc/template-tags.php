@@ -69,7 +69,8 @@ if ( ! function_exists( 'gracepointresources_post_meta' ) ) :
 function gracepointresources_post_meta() {
 ?>
     <div class="well tags">
-        <?php the_tags('Tags: ',' , '); ?>
+    	<?php printLikes(get_the_ID()); ?>
+        <span class="pull-right"><?php the_tags('Tags: ',' , '); ?></span>
         <div class="clear"></div>
     </div>
     <div class="well categories">
