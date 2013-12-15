@@ -823,17 +823,17 @@ h2 {
 
 /* COMMENT AREA */
 .comment-form-author,.comment-form-email,.comment-form-url{
-    width:33%;
-    float: left;
-    clear: none !important;
+  width:33%;
+  float: left;
+  clear: none !important;
 }
 
 .mx_comments .commentmetadata .fn ,
 .mx_comments .commentmetadata .fn a{
-    float: left;
-    margin-right: 10px;
-    font-size: 12pt;
-    color: #2765B5 !important;
+  float: left;
+  margin-right: 10px;
+  font-size: 12pt;
+  color: #2765B5 !important;
 
 }
 #commentform textarea{
@@ -842,13 +842,13 @@ h2 {
 }
 
 #respond{
-    padding-top: 20px;
-    margin-top: 20px;
+  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .form-allowed-tags{
-    font-family: 'courier new';
-    color: #aaa;
+  font-family: 'courier new';
+  color: #aaa;
 }
 
 .bottom {
@@ -862,11 +862,11 @@ h2 {
 }
 
 .rss-image{
-    width: 19px;
-    height: 19px;
-    background-image: url('images/rss.png');
-    margin-left: 3px;
-    display: inline-block;
+  width: 19px;
+  height: 19px;
+  background-image: url('images/rss.png');
+  margin-left: 3px;
+  display: inline-block;
 }
 
 /* Likes */
