@@ -45,8 +45,8 @@ if ( ! function_exists( 'gracepointresources_post_nav' ) ) :
  */
 function gracepointresources_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
+	$previous = get_adjacent_post( true, '', true );
+	$next     = get_adjacent_post( true, '', false );
 
 	if ( ! $next && ! $previous ) {
 		return;
@@ -70,6 +70,10 @@ function gracepointresources_post_meta() {
 ?>
     <div class="well tags">
         <?php the_tags('Tags: ',' , '); ?>
+        <div class="clear"></div>
+    </div>
+    <div class="well categories">
+        <?php echo get_the_category_list(','); ?>
         <div class="clear"></div>
     </div>
     <div class="well author-box">
