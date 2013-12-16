@@ -110,7 +110,30 @@ function gracepointresources_category_display($category) {
                 </a>
                 <p><?php echo $category->description; ?></p>
                 <!-- Category Image -->
-                <img src="<?php category_image_src(array("term_id" => $category->cat_ID),true); ?>" />
+                <?php 
+                    $most_liked = get_most_liked_posts_by_category($category->cat_ID, 5);
+                    if ($most_liked):
+                        global $post;
+                        print "<ul>";
+                        foreach ($most_liked as $post):
+                            setup_postdata($post);
+                        ?>
+                            <li><a href="<?php
+                            the_permalink();
+                        ?>" rel="bookmark" title="Permanent Link to <?php
+                            the_title();
+                        ?>">
+                            <?php
+                            the_title();
+                        ?></a> (<?php
+                                print get_post_meta(get_the_id(), "_likes", 1);
+                                echo __('likes', 'like_this');
+                                ?> )</li>
+                            <?php
+                            endforeach;
+                        print "</ul>";
+                    endif;
+                ?>
             </div>
             <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn btn-warning btn-block bottom">View Details</a>
         </div>

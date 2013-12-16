@@ -125,3 +125,21 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+function get_most_liked_posts_by_category( $category, $num_posts) {
+    global $wpdb;
+    $querystr = "
+        SELECT $wpdb->posts.*
+        FROM $wpdb->posts, $wpdb->postmeta, $wpdb->term_relationships
+        WHERE $wpdb->posts.ID = $wpdb->postmeta.post_id
+        AND $wpdb->posts.ID = $wpdb->term_relationships.object_id
+        AND $wpdb->postmeta.meta_key = '_likes'
+        AND $wpdb->posts.post_status = 'publish'
+        AND $wpdb->posts.post_type = 'post'
+        AND $wpdb->term_relationships.term_taxonomy_id = " . $category . "
+        ORDER BY $wpdb->postmeta.meta_value DESC
+        LIMIT " . $num_posts;
+
+    $pageposts = $wpdb->get_results($querystr, OBJECT);
+    return $pageposts;
+}
