@@ -256,19 +256,6 @@ function gracepointresources_categorized_blog() {
 	}
 }
 
-function gracepointresources_category_rss_link($category) {
-?>
-<?php
-    printf( __( '%1$s', 'gracepointresources' ),
-        sprintf( '<a href="%1$s/feed" rel="bookmark">Subscribe (RSS) to %2$s</a>',
-            esc_url( get_category_link($category->cat_ID) ),
-            $category->name
-        )
-    );
-?>
-<?php
-}
-
 if ( ! function_exists( 'gracepointresources_custom_search_form' ) ) :
 /**
  * Prints our own customized search form
