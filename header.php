@@ -40,6 +40,18 @@
             </div><!-- /.navbar -->
 
         </div> <!-- /.container -->
+        <?php if(is_archive()): ?>
+            <div class="container">
+                <div class="arc-header">
+                    <h1 class="entry-title pull-right">
+                        <?php if(is_category()) : ?>
+                        <?php echo single_cat_title( '', false ); ?>
+                        <?php endif; ?>
+                    </h1>
+                </div>
+            </div>
+        <?php endif; ?>
+
     </div><!-- /.navbar-wrapper -->
 
 	<div id="content" class="site-content">

@@ -695,7 +695,7 @@ code{
 
 .arc-header{
     margin-left: 0px;
-    padding-bottom:25px;
+    min-height: 50px;
     background: rgba(0,0,0,0.1);
 }
 .arc-header h1{
