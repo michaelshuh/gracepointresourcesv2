@@ -134,7 +134,6 @@ function gracepointresources_category_display($category) {
                     endif;
                 ?>
             </div>
-            <a href="<?php echo get_category_link($category->cat_ID); ?>" class="btn btn-warning btn-block bottom">View Details</a>
         </div>
     </div>
 <?php
