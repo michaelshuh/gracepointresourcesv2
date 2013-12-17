@@ -108,8 +108,7 @@ function gracepointresources_category_display($category) {
 								<a href="rss">
                 	<div class="rss-image"></div>
                 </a>
-                <p><?php echo $category->description; ?></p>
-                <!-- Category Image -->
+                <!-- Category Most Popular -->
                 <?php 
                     $most_liked = get_most_liked_posts_by_category($category->cat_ID, 5);
                     if ($most_liked):

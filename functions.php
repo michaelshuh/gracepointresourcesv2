@@ -127,6 +127,14 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 function get_most_liked_posts_by_category( $category, $num_posts) {
+    $categories = get_categories(array(
+        'child_of' => $category,
+    ) ); 
+    $category_ids = array_map(create_function('$o', 'return $o->cat_ID;'), $categories);
+    array_push($category_ids,$category);
+    $category_list = implode(',', array_map('intval', $category_ids));
+
+
     global $wpdb;
     $querystr = "
         SELECT $wpdb->posts.*
@@ -136,7 +144,7 @@ function get_most_liked_posts_by_category( $category, $num_posts) {
         AND $wpdb->postmeta.meta_key = '_likes'
         AND $wpdb->posts.post_status = 'publish'
         AND $wpdb->posts.post_type = 'post'
-        AND $wpdb->term_relationships.term_taxonomy_id = " . $category . "
+        AND $wpdb->term_relationships.term_taxonomy_id IN (" .  $category_list . " )
         ORDER BY $wpdb->postmeta.meta_value DESC
         LIMIT " . $num_posts;
 
