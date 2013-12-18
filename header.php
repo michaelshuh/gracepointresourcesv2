@@ -38,7 +38,6 @@
     <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
                 </div><!-- /.navbar-inner -->
             </div><!-- /.navbar -->
-
         </div> <!-- /.container -->
         <?php if(is_archive()): ?>
             <div class="container">
@@ -51,7 +50,7 @@
                 </div>
             </div>
         <?php endif; ?>
-
+        <?php wp_nav_menu( array( 'theme_location' => 'header-  menu', 'container_class' => 'main-navigation' ) ); ?>
     </div><!-- /.navbar-wrapper -->
 
 	<div id="content" class="site-content">

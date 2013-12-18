@@ -419,6 +419,7 @@ a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
+	padding: 10px;
 }
 .main-navigation a {
 	display: block;
@@ -887,3 +888,17 @@ h2 {
 	background-color: #3E3D32;
 	text-decoration: none;
 }
+
+#navigation	{ float: left; position:relative; z-index:1;}
+#navigation ul	{ font-weight: bold; font-size:14px; text-transform:uppercase; list-style: none; }
+#navigation li	{ position:relative; float: left;}
+#navigation li a	{text-decoration: none; float: left; padding:15px 15px 15px 15px; letter-spacing:0.6px; }
+#navigation .main_category {background-position:top center; background-repeat: no-repeat;}
+#navigation .active	{ background-position:top center; background-position:0px 10px; background-repeat:no-repeat;}
+#navigation li.current-menu-item, #navigation li.current-menu-ancestor, #navigation li.current-post-parent, #navigation li.current-menu-parent { background-position:top center; background-position:0px 10px; background-repeat:no-repeat;}
+
+#navigation ul li ul	{ position:absolute; top:50px; left:0px; display:none;	list-style-type: none; list-style-image:none; list-style-position:outside; width:230px; }
+#navigation ul li ul li a	{ padding: 15px 0 15px 36px; width:194px; }
+#navigation li a.odd	{ background-repeat:no-repeat; background-position:18px 23px; text-transform:uppercase; }
+#navigation li a.even	{ background:#212121 url(../images/navigation_dot.gif);	background-repeat:no-repeat; background-position:18px 23px; }
+#navigation li a.odd:hover, #navigation li a.even:hover	{ background-repeat:no-repeat; background-position:18px 23px;	}
