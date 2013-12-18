@@ -40,7 +40,7 @@ function gracepointresources_setup() {
 	 */
 	//add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+		// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'gracepointresources' ),
 	) );
@@ -100,12 +100,6 @@ function gracepointresources_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'gracepointresources_scripts' );
-
-function register_my_menu() {
-	register_nav_menu('header-menu',__( 'Header Menu' ));
-}
-
-add_action( 'init', 'register_my_menu' );
 
 /**
  * Implement the Custom Header feature.
