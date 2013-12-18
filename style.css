@@ -410,6 +410,7 @@ a:active {
 	display: block;
 	float: left;
 	width: 100%;
+	background-color: black;
 }
 .main-navigation ul {
 	list-style: none;
@@ -420,6 +421,7 @@ a:active {
 	float: left;
 	position: relative;
 	padding: 10px;
+	background-color: black;
 }
 .main-navigation a {
 	display: block;
