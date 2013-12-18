@@ -20,7 +20,7 @@ get_header(); ?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main container" role="main">
     
-    <?php if ($current_category->parent == 0): ?>
+    <?php if ($current_category->category_count == 0): ?>
     <?php
             $child_categories = array();
             foreach (get_categories("hide_empty=0&parent=$current_categoryID") as $child_category) {
