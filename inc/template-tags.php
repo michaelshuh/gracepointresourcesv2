@@ -105,9 +105,9 @@ function gracepointresources_category_display($category) {
         <div class="about well">
             <div class="entry-content">
                 <h2 style="display: inline-block;"><a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name; ?></a></h2>
-								<a href="rss">
-                	<div class="rss-image"></div>
-                </a>
+                    <a href="<?php echo "/category/$category->slug/rss2" ?>">
+                        <div class="rss-image"></div>
+                    </a>
                 <!-- Category Most Popular -->
                 <?php 
                     $most_liked = get_most_liked_posts_by_category($category->cat_ID, 5);
