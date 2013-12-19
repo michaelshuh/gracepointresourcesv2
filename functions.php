@@ -144,6 +144,7 @@ function get_most_liked_posts_by_category( $category, $num_posts) {
         AND $wpdb->postmeta.meta_key = '_likes'
         AND $wpdb->posts.post_status = 'publish'
         AND $wpdb->posts.post_type = 'post'
+        AND $wpdb->posts.post_password = ''
         AND $wpdb->term_relationships.term_taxonomy_id IN (" .  $category_list . " )
         ORDER BY $wpdb->postmeta.meta_value DESC
         LIMIT " . $num_posts;
