@@ -113,24 +113,27 @@ function gracepointresources_category_display($category) {
                     $most_liked = get_most_liked_posts_by_category($category->cat_ID, 5);
                     if ($most_liked):
                         global $post;
-                        print "<ul>";
-                        foreach ($most_liked as $post):
-                            setup_postdata($post);
-                        ?>
-                            <li><a href="<?php
-                            the_permalink();
-                        ?>" rel="bookmark" title="Permanent Link to <?php
-                            the_title();
-                        ?>">
-                            <?php
-                            the_title();
-                        ?></a> (<?php
-                                print get_post_meta(get_the_id(), "_likes", 1);
-                                echo __('likes', 'like_this');
-                                ?> )</li>
-                            <?php
-                            endforeach;
-                        print "</ul>";
+                        print '<div class="most_liked">';
+                            print "<h3>Most Liked Posts</h3>";
+                            print "<ul>";
+                            foreach ($most_liked as $post):
+                                setup_postdata($post);
+                            ?>
+                                <li><a href="<?php
+                                the_permalink();
+                            ?>" rel="bookmark" title="Permanent Link to <?php
+                                the_title();
+                            ?>">
+                                <?php
+                                the_title();
+                            ?></a> (<?php
+                                    print get_post_meta(get_the_id(), "_likes", 1);
+                                    echo __('likes', 'like_this');
+                                    ?> )</li>
+                                <?php
+                                endforeach;
+                            print "</ul>";
+                        print "</div>";
                     endif;
                 ?>
             </div>

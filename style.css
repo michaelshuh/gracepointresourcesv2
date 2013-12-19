@@ -890,3 +890,12 @@ h2 {
 	background-color: #3E3D32;
 	text-decoration: none;
 }
+
+.most_liked ul{
+    list-style: none;
+    margin-left: 5px;
+}
+
+.most_liked li {
+    margin-bottom: 5px;
+}
