@@ -39,6 +39,7 @@
                 </div><!-- /.navbar-inner -->
             </div><!-- /.navbar -->
         </div> <!-- /.container -->
+        <?php shailan_dropdown_menu(); ?>
         <?php if(is_archive()): ?>
             <div class="container">
                 <div class="arc-header">
