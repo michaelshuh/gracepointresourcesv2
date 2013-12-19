@@ -51,8 +51,6 @@
                 </div>
             </div>
         <?php endif; ?>
-        <?php wp_nav_menu( array( 'theme_location' => 'primary',
-            'container_class' => 'main-navigation' ) ); ?>
     </div><!-- /.navbar-wrapper -->
 
 	<div id="content" class="site-content">
