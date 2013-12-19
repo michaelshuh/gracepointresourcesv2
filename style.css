@@ -903,3 +903,8 @@ h2 {
 .download-files {
     margin: 0 10px;
 }
+
+.paging-navigation {
+    width: inherit;
+
+}
