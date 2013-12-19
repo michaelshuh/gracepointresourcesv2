@@ -899,3 +899,7 @@ h2 {
 .most_liked li {
     margin-bottom: 5px;
 }
+
+.download-files {
+    margin: 0 10px;
+}
