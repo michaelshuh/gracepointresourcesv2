@@ -71,10 +71,10 @@ function gracepointresources_post_meta() {
     <div class="well tags">
     	<?php printLikes(get_the_ID()); ?>
         <span class="pull-right span4 offset1"><?php the_tags('Tags: ',' , '); ?></span>
-        <span class="pull-right span4 offset1">Categories:<?php echo get_the_category_list(','); ?></span>
+        <span class="pull-right span4 offset1">Categories: <?php echo get_the_category_list(','); ?></span>
         <div class="clear"></div>
     </div>
-    <div class="well author-box">
+    <!--<div class="well author-box">
         <div class="media">
             <div class="pull-left">
                 <?php echo get_avatar( get_the_author_meta('ID'), 90 ); ?>
@@ -87,7 +87,7 @@ function gracepointresources_post_meta() {
                 <?php echo get_the_author_meta('description'); ?>
             </div>
         </div>
-    </div>
+    </div>-->
 
 <?php
 }
