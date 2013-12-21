@@ -266,8 +266,7 @@ function gracepointresources_custom_search_form($category) {
 <div class="search-field">
     <form class="form-inline" method="get" id="searchform" action="<?php bloginfo('home'); ?>">
         <div class="row">
-            <div class="span3 search-font"> What </div>
-            <div class="span3 offset5 search-font"> Category </div>
+            <div class="span3 search-font"> Search for… </div>
         </div>
         <input class="search-bar" name="s" id="s"/>
         <select class=" search-dropdown" id="cat" name="cat">
