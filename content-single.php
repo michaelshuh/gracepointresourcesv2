@@ -6,6 +6,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <div class="entry-meta breadcrumb well">
+            <?php if(function_exists('pf_show_link')){echo pf_show_link();} ?>
             <?php
             $attachments = new Attachments( 'attachments' );
             if ($attachments->exist() ) {
