@@ -27,13 +27,11 @@ get_header(); ?>
 
                     </div>
                     <div class="pull-left span3 well">
-                        <?php dynamic_sidebar( 'category-sidebar' ); ?>
-                        <div class="clear"></div>
                         <?php $attachments = new Attachments( 'attachments'); /* pass the instance name */ ?>
 
                         <?php if( $attachments->exist() ) : ?>
                             <aside id="attachments" class="widget box">
-                                <h3>Attachments</h3>
+                                <h3><?php echo get_the_title($post->ID); ?> Attachments</h3>
                                 <ul>
                                     <?php while( $attachments->get() ) : ?>
                                     <li>
@@ -43,6 +41,8 @@ get_header(); ?>
                                 </ul>
                             </aside>
                         <?php endif; ?>
+                        <?php dynamic_sidebar( 'category-sidebar' ); ?>
+                        <div class="clear"></div>
                         <?php get_sidebar(); ?>
                     </div>
                 </main><!-- #main -->
