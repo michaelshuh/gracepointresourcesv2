@@ -224,15 +224,25 @@ function gracepointresources_posted_on() {
     $author_name = get_post_meta( $post->ID, 'cpa_author', TRUE );
     $author_email = get_post_meta( $post->ID, 'cpa_author_url', TRUE );
 
+    $posted_by = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+            esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+            esc_html( get_the_author() )
+    );
+
+    if (!empty($author_name)) {
+        echo "I'm empty";
+        $posted_by = sprintf( '<span class="author vcard"><a class="url fn n" href="mailto:%1$s?Subject=Gracepoint Resources: %2$s">%3$s</a></span>',
+            $author_email,
+            get_the_title($post->ID),
+            $author_name
+        );
+    }
+
 	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> / Posted by %2$s</span>', 'gracepointresources' ),
 		sprintf( '%1$s',
 			$time_string
 		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="mailto:%1$s?Subject=Gracepoint Resources: %2$s">%3$s</a></span>',
-			$author_email,
-            get_the_title($post->ID),
-            $author_name
-		)
+	    $posted_by
 	);
 }
 endif;
