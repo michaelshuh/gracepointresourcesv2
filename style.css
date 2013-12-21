@@ -786,21 +786,22 @@ h2 {
 
 .search-field {
 	padding: 20px;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 100px;
 }
 
 #cat {
 	width: 20%;
-	height: 40px;
+	height: 50px;
 }
 
 .search-bar {
 	width: 70%;
-	height: 34px;
+	height: 50px;
 }
 
 .search-button {
-	height: 41px;
+	height: 50px;
 	position: relative;
 	background: #69f;
 }
