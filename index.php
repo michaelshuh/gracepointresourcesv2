@@ -17,7 +17,7 @@ get_header(); ?>
         <?php 
 
             $parent_categories = array();
-            foreach(get_categories('hide_empty=0') as $category) {
+            foreach(get_categories('hide_empty=0&exclude=1') as $category) {
                 if ( $category->parent > 0) {
                     continue;
                 } else {
