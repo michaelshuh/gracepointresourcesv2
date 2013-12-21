@@ -6,7 +6,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <div class="entry-meta breadcrumb well">
-            <?php if(function_exists('pf_show_link')){echo pf_show_link();} ?>
             <?php
             $attachments = new Attachments( 'attachments' );
             if ($attachments->exist() ) {
@@ -54,6 +53,7 @@
     </div><!-- .entry-content -->
 
     <div class="entry-meta breadcrumb well">
+            <?php if(function_exists('pf_show_link')){echo pf_show_link();} ?>
             <?php gracepointresources_posted_on(); ?>
             <?php gracepointresources_post_nav(); ?>
         </div><!-- .entry-meta -->

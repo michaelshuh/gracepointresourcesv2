@@ -230,7 +230,6 @@ function gracepointresources_posted_on() {
     );
 
     if (!empty($author_name)) {
-        echo "I'm empty";
         $posted_by = sprintf( '<span class="author vcard"><a class="url fn n" href="mailto:%1$s?Subject=Gracepoint Resources: %2$s">%3$s</a></span>',
             $author_email,
             get_the_title($post->ID),
