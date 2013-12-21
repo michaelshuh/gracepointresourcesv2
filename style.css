@@ -759,6 +759,13 @@ code{
     padding: 10px;
 }
 
+.footer .feedback {
+    font-size: 9pt;
+    background: rgba(0,0,0,0.4) !important;
+    text-align: center;
+    padding: 10px;
+}
+
 h1 {
     font-family: 'Open Sans';
     font-weight: 300;

@@ -17,6 +17,11 @@
                     <?php printf( __( 'Copyright &copy: %1$s', 'gracepointresources' ), get_bloginfo('sitename')); ?>
                 </div><!-- .site-info-->
             </div><!-- .row-->
+            <div class="row">
+                <div class="feedback">
+                    <a href="mailto:michael.shuh@gpmail.org?Subject=Feedback for GracepointResources">Send Feedback</a>
+                </div>
+            </div>
 		</div><!-- .container -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
