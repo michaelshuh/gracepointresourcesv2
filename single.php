@@ -27,19 +27,22 @@ get_header(); ?>
 
                     </div>
                     <div class="pull-left span3 well">
-                        <?php $attachments = new Attachments( 'attachments'); /* pass the instance name */ ?>
+                        <?php $post_status = get_post_status(); ?>
+                        <?php if (is_user_logged_in() || $post_status == 'published') : ?>
+                            <?php $attachments = new Attachments( 'attachments'); /* pass the instance name */ ?>
 
-                        <?php if( $attachments->exist() ) : ?>
-                            <aside id="attachments" class="widget box">
-                                <h3><?php echo get_the_title($post->ID); ?> Attachments</h3>
-                                <ul>
-                                    <?php while( $attachments->get() ) : ?>
-                                    <li>
-                                        <a href="<?php echo $attachments->url(); ?>" target="_blank"><span><?php echo $attachments->field('title')?><span></a>
-                                    </li>
-                                    <?php endwhile; ?>
-                                </ul>
-                            </aside>
+                            <?php if( $attachments->exist() ) : ?>
+                                <aside id="attachments" class="widget box">
+                                    <h3><?php echo get_the_title($post->ID); ?> Attachments</h3>
+                                    <ul>
+                                        <?php while( $attachments->get() ) : ?>
+                                        <li>
+                                            <a href="<?php echo $attachments->url(); ?>" target="_blank"><span><?php echo $attachments->field('title')?><span></a>
+                                        </li>
+                                        <?php endwhile; ?>
+                                    </ul>
+                                </aside>
+                            <?php endif; ?>
                         <?php endif; ?>
                         <?php dynamic_sidebar( 'category-sidebar' ); ?>
                         <div class="clear"></div>
