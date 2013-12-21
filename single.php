@@ -28,7 +28,7 @@ get_header(); ?>
                     </div>
                     <div class="pull-left span3 well">
                         <?php $post_status = get_post_status(); ?>
-                        <?php if (is_user_logged_in() || $post_status == 'published') : ?>
+                        <?php if ((is_user_logged_in() || $post_status == 'published') && post_password_required()) : ?>
                             <?php $attachments = new Attachments( 'attachments'); /* pass the instance name */ ?>
 
                             <?php if( $attachments->exist() ) : ?>
