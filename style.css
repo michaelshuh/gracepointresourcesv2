@@ -603,6 +603,7 @@ object {
 
 .widget {
 	margin: 0 0 1.5em;
+    font-size: 9pt;
 }
 
 /* Make sure select elements fit in widgets */
@@ -645,10 +646,6 @@ object {
 }
 .box.widget ul li{
     margin:0px;
-}
-.box.widget li,
-.box.widget p{
-    font-size: 11pt;
 }
 
 .box.widget li {
