@@ -481,7 +481,7 @@ a:active {
 
 .sticky {
 }
-.hentry {
+.entry {
 	margin: 0 0 1.5em;
 }
 .byline,
@@ -912,5 +912,8 @@ h2 {
 
 .paging-navigation {
     width: inherit;
+}
 
+.publication_title a {
+    word-wrap: break-word;
 }
