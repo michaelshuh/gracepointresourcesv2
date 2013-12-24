@@ -8,7 +8,10 @@
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		<div>
-			<?php signle_cat_title(); ?>
+		  Category: 
+		  <div class="category-result">
+			  <?php echo get_category(the_category_ID(false))->name; ?>
+		  </div>
 		</div>
 	</header><!-- .entry-header -->
 

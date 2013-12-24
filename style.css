@@ -914,3 +914,8 @@ h2 {
     width: inherit;
 
 }
+
+.category-result {
+	display: 'inline-block';
+	color: orange;
+}
