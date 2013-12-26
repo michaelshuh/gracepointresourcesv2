@@ -917,3 +917,8 @@ h2 {
 .publication_title a {
     word-wrap: break-word;
 }
+
+.category-result {
+	display: inline-block;
+	color: orange;
+}

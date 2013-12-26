@@ -128,7 +128,7 @@ function gracepointresources_category_display($category) {
                                 the_title();
                             ?></a> (<?php
                                     print get_post_meta(get_the_id(), "_likes", 1);
-                                    echo __('likes', 'like_this');
+                                    echo __(' likes', 'like_this');
                                     ?> )</li>
                                 <?php
                                 endforeach;

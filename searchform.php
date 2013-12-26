@@ -6,7 +6,7 @@
  */
 ?>
 
-<div class="search-field">
+<div class="search-field well">
 	<form class="form-inline" method="get" id="searchform" action="<?php bloginfo('home'); ?>">
 	  <div class="row">
 	      <div class="span3 search-font"> Search for… </div>
