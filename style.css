@@ -927,3 +927,7 @@ h2 {
 	display: inline-block;
 	color: orange;
 }
+
+#attachments span {
+    word-wrap: break-word;
+}
