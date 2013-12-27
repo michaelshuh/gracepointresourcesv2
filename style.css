@@ -36,7 +36,6 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
 	font-family: inherit;
-	font-size: 100%;
 	font-style: inherit;
 	font-weight: inherit;
 	margin: 0;
@@ -54,6 +53,7 @@ html {
 }
 body {
 	background: #fff;
+    font-size: 10pt;
 }
 article,
 aside,
@@ -736,10 +736,6 @@ code{
     padding:0px 10px;
 }
 
-.entry-content,
-.entry-content p{
-    font-size:12pt;
-}
 
 .footer {
     width: 100%;
@@ -780,7 +776,15 @@ h2 {
 }
 
 .entry-content, .entry-content p {
+    font-size: 10pt;
+}
+
+.entry-content h3 {
     font-size: 12pt;
+}
+
+.entry-content h2 {
+    font-size: 18pt;
 }
 
 .search-field {
