@@ -689,7 +689,6 @@ code{
 .navbar-wrapper{
     padding-top:  20px;
     padding-bottom: 0px;
-    margin-bottom: 20px;
     background: #eee url('images/wild_oliva.png');
 }
 
@@ -785,9 +784,7 @@ h2 {
 }
 
 .search-field {
-	padding: 20px;
-    margin-top: 40px;
-    margin-bottom: 100px;
+	margin-bottom: 30px;
 }
 
 #cat {
