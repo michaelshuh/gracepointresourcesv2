@@ -8,7 +8,7 @@
         <div class="entry-meta breadcrumb well">
             <?php if(function_exists('pf_show_link')){echo pf_show_link();} ?>
             <?php $post_status = get_post_status(); ?>
-            <?php if (is_user_logged_in() || ($post_status == 'published' && post_password_required())) : ?>
+            <?php if (is_user_logged_in() || ($post_status == 'publish' && !post_password_required())) : ?>
                 <?php
                 $attachments = new Attachments( 'attachments' );
                 if ($attachments->exist() ) {
