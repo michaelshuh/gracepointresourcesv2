@@ -28,11 +28,12 @@ get_header(); ?>
     
         <?php get_search_form() ?>
 
+
 		<?php if ( is_front_page() ) : ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php /*while ( have_posts() ) : the_post(); */ ?>
-            <div class="row">
+            <div class="pull-left-new span10 row">
                 <?php
                     foreach ($parent_categories as $category) { 
                         gracepointresources_category_display($category);
@@ -55,8 +56,10 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
+            <div id="homepage-sidebar" class="pull-left-new well">
+                <?php dynamic_sidebar( 'homepage-sidebar' ); ?>
+            </div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 <?php get_footer(); ?>

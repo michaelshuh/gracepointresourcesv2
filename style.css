@@ -931,3 +931,13 @@ h2 {
 #attachments span {
     word-wrap: break-word;
 }
+
+.pull-left-new {
+    float: left;
+    min-height: 1px;
+    margin-left: -30px;
+}
+
+#homepage-sidebar {
+    width: 220px;
+}
