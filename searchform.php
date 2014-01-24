@@ -5,8 +5,11 @@
  * @package gracepointresources
  */
 ?>
-
-<div class="search-field well">
+<?php if(is_archive()) : ?>
+    <div class="search-field">
+<?php else : ?>
+    <div class="search-field well">
+<?php endif; ?>
 	<form class="form-inline" method="get" id="searchform" action="<?php bloginfo('home'); ?>">
 	  <div class="row">
 	      <div class="span3 search-font"> Search for… </div>

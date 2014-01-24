@@ -34,22 +34,36 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('sitename'); ?></a>
+                    <a class="brand pull-left" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('sitename'); ?></a>
+                    <?php if(is_archive()): ?>
+                        <span class="pull-right">
+                            <h1 class="entry-title pull-right">
+                                <?php if(is_category()) : ?>
+                                <?php echo single_cat_title( '', false ); ?>
+                                <?php endif; ?>
+                            </h1>
+                        </span>
+                    <?php endif; ?>
     <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
                 </div><!-- /.navbar-inner -->
             </div><!-- /.navbar -->
         </div> <!-- /.container -->
         <?php if(is_archive()): ?>
             <div class="container">
-                <div class="arc-header">
-                    <h1 class="entry-title pull-right">
-                        <?php if(is_category()) : ?>
-                        <?php echo single_cat_title( '', false ); ?>
-                        <?php endif; ?>
-                    </h1>
-                </div>
+                <?php if(is_category()): ?>
+                    <?php
+                        $current_categoryID = $cat;
+                        $current_category = get_category($current_categoryID);
+                    ?>
+                    <?php if ($current_category->category_count == 0): ?>
+                        <?php get_search_form() ?>
+                    <?php else : ?>
+                        <?php gracepointresources_custom_search_form($current_category); ?>
+                    <?php endif; ?>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
+
         <?php shailan_dropdown_menu(); ?>
     </div><!-- /.navbar-wrapper -->
 
