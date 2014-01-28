@@ -28,6 +28,10 @@ get_header(); ?>
     
         <?php get_search_form() ?>
 
+        <div id="rss-info">
+            <div class="rss-image"></div>Click on the RSS image to subscribe to the category, for more info click <a href="http://www.gracepointresources.org/how-to-subscribe-via-rss/">here</a>
+        </div>
+
 
 		<?php if ( is_front_page() ) : ?>
 

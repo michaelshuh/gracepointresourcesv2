@@ -945,3 +945,12 @@ h2 {
 #homepage-sidebar {
     width: 260px;
 }
+
+#rss-info .rss-image {
+    margin-right: 5px;
+}
+
+#rss-info {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
