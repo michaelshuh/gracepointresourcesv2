@@ -35,6 +35,9 @@
                         <span class="icon-bar"></span>
                     </a>
                     <a class="brand pull-left" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('sitename'); ?></a>
+                    <a href="<?php echo esc_url(home_url('/feed/rss')); ?>">
+                        <div class="rss-image"></div>
+                    </a>
                     <?php if(is_archive()): ?>
                         <span class="pull-right">
                             <h1 class="entry-title pull-right">

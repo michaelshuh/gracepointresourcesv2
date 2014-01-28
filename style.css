@@ -884,6 +884,10 @@ h2 {
   display: inline-block;
 }
 
+.navbar-inner .rss-image {
+    margin-top: 20px;
+}
+
 /* Likes */
 .likeThis {
 	color: #fff !important;
