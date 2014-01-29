@@ -143,14 +143,19 @@ function get_most_liked_posts_by_category( $category, $num_posts) {
     $category_list = implode(',', array_map('intval', $category_ids));
 
     global $wpdb;
+    $post_status = "AND $wpdb->posts.post_status = 'publish'";
+    if (is_user_logged_in()) {
+        $post_status = "AND ($wpdb->posts.post_status = 'publish' OR $wpdb->posts.post_status = 'private')";
+    }
+
+
     $querystr = "
         SELECT $wpdb->posts.*
         FROM $wpdb->posts, $wpdb->postmeta, $wpdb->term_relationships, $wpdb->term_taxonomy
         WHERE $wpdb->posts.ID = $wpdb->postmeta.post_id
         AND $wpdb->posts.ID = $wpdb->term_relationships.object_id
         AND $wpdb->term_taxonomy.term_taxonomy_id = $wpdb->term_relationships.term_taxonomy_id
-        AND $wpdb->postmeta.meta_key = '_likes'
-        AND $wpdb->posts.post_status = 'publish'
+        AND $wpdb->postmeta.meta_key = '_likes'" . $post_status . "
         AND $wpdb->posts.post_type = 'post'
         AND $wpdb->posts.post_password = ''
         AND $wpdb->term_taxonomy.term_id IN ($category_list)
